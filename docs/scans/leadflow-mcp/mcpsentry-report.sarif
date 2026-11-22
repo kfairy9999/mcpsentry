@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "MCPSentry",
+          "version": "0.1.0",
+          "informationUri": "https://github.com/kfairy9999/mcpsentry",
+          "rules": [
+            {
+              "id": "MCP001",
+              "name": "hardcoded-secret",
+              "shortDescription": {
+                "text": "Flags secret-like values hardcoded in source instead of read from the environment."
+              },
+              "help": {
+                "text": "Flags secret-like values hardcoded in source instead of read from the environment."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP002",
+              "name": "dishonest-annotation",
+              "shortDescription": {
+                "text": "Flags tools whose readOnlyHint or destructiveHint does not match the handler, and tools that omit annotations entirely."
+              },
+              "help": {
+                "text": "Flags tools whose readOnlyHint or destructiveHint does not match the handler, and tools that omit annotations entirely."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP003",
+              "name": "overbroad-tool",
+              "shortDescription": {
+                "text": "Flags tools that expose unconstrained shell, path, URL, or code parameters to the model."
+              },
+              "help": {
+                "text": "Flags tools that expose unconstrained shell, path, URL, or code parameters to the model."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP004",
+              "name": "unsafe-sink",
+              "shortDescription": {
+                "text": "Flags tool handlers that pass arguments into a shell, filesystem, network, eval, or SQL sink."
+              },
+              "help": {
+                "text": "Flags tool handlers that pass arguments into a shell, filesystem, network, eval, or SQL sink."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP005",
+              "name": "prompt-injection-description",
+              "shortDescription": {
+                "text": "Flags tool descriptions that try to override the model or treat tool output as new instructions."
+              },
+              "help": {
+                "text": "Flags tool descriptions that try to override the model or treat tool output as new instructions."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP006",
+              "name": "missing-auth",
+              "shortDescription": {
+                "text": "Flags HTTP MCP transports that do not appear to authenticate callers."
+              },
+              "help": {
+                "text": "Flags HTTP MCP transports that do not appear to authenticate callers."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP007",
+              "name": "missing-rate-limit",
+              "shortDescription": {
+                "text": "Flags HTTP MCP transports that do not appear to rate-limit callers."
+              },
+              "help": {
+                "text": "Flags HTTP MCP transports that do not appear to rate-limit callers."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            },
+            {
+              "id": "MCP008",
+              "name": "dependency-cve",
+              "shortDescription": {
+                "text": "Looks up npm lockfile packages in the OSV vulnerability database."
+              },
+              "help": {
+                "text": "Looks up npm lockfile packages in the OSV vulnerability database."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              }
+            }
+          ]
+        }
+      },
+      "results": []
+    }
+  ]
+}

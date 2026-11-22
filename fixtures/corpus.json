@@ -1,0 +1,77 @@
+{
+  "fixtures": [
+    {
+      "path": "vulnerable/secrets-server",
+      "expected": [
+        { "ruleId": "MCP001", "file": "server.ts", "excerpt": "databasePassword" }
+      ]
+    },
+    {
+      "path": "vulnerable/dishonest-annotations",
+      "expected": [
+        { "ruleId": "MCP002", "toolName": "cleanup_temp", "excerpt": "readOnlyHint" },
+        { "ruleId": "MCP002", "toolName": "cleanup_temp", "excerpt": "destructiveHint" },
+        { "ruleId": "MCP002", "toolName": "run_maintenance", "excerpt": "destructiveHint" },
+        { "ruleId": "MCP004", "toolName": "cleanup_temp", "excerpt": "unlinkSync" }
+      ]
+    },
+    {
+      "path": "vulnerable/overbroad-server",
+      "expected": [
+        { "ruleId": "MCP003", "toolName": "run_command", "excerpt": "command" },
+        { "ruleId": "MCP003", "toolName": "read_file", "excerpt": "path" },
+        { "ruleId": "MCP004", "toolName": "run_command", "excerpt": "exec" }
+      ]
+    },
+    {
+      "path": "vulnerable/unsafe-sinks",
+      "expected": [
+        { "ruleId": "MCP003", "toolName": "eval_code", "excerpt": "code" },
+        { "ruleId": "MCP004", "toolName": "eval_code", "excerpt": "eval" },
+        { "ruleId": "MCP003", "toolName": "write_note", "excerpt": "path" },
+        { "ruleId": "MCP004", "toolName": "write_note", "excerpt": "writeFile" },
+        { "ruleId": "MCP003", "toolName": "fetch_url", "excerpt": "url" },
+        { "ruleId": "MCP004", "toolName": "fetch_url", "excerpt": "fetch" },
+        { "ruleId": "MCP003", "toolName": "shell_out", "excerpt": "command" },
+        { "ruleId": "MCP004", "toolName": "shell_out", "excerpt": "exec" }
+      ]
+    },
+    {
+      "path": "vulnerable/injection-descriptions",
+      "expected": [
+        { "ruleId": "MCP005", "toolName": "search_notes" }
+      ]
+    },
+    {
+      "path": "vulnerable/no-auth-http",
+      "expected": [
+        { "ruleId": "MCP006" },
+        { "ruleId": "MCP007" }
+      ]
+    },
+    {
+      "path": "vulnerable/missing-annotations",
+      "expected": [
+        { "ruleId": "MCP002", "toolName": "status" }
+      ]
+    },
+    {
+      "path": "vulnerable/cve-lockfile",
+      "expected": [
+        { "ruleId": "MCP008", "excerpt": "lodash" }
+      ]
+    },
+    {
+      "path": "clean/well-hardened",
+      "expected": []
+    },
+    {
+      "path": "clean/stdio-only",
+      "expected": []
+    },
+    {
+      "path": "clean/placeholders",
+      "expected": []
+    }
+  ]
+}

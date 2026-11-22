@@ -1,0 +1,108 @@
+{
+  "toolName": "MCPSentry",
+  "version": "0.1.0",
+  "scannedAt": "2026-11-22T06:18:32.782Z",
+  "root": "kfairy9999/leadflow-mcp@73dda9c5d41d9fd360cee28be8147b9c7fd25b39",
+  "findings": [],
+  "tools": [
+    {
+      "name": "create_lead",
+      "file": "src/mcp/server.ts",
+      "startLine": 86,
+      "hasAnnotations": true,
+      "readOnlyHint": false,
+      "destructiveHint": false
+    },
+    {
+      "name": "update_lead",
+      "file": "src/mcp/server.ts",
+      "startLine": 107,
+      "hasAnnotations": true,
+      "readOnlyHint": false,
+      "destructiveHint": false
+    },
+    {
+      "name": "get_lead",
+      "file": "src/mcp/server.ts",
+      "startLine": 127,
+      "hasAnnotations": true,
+      "readOnlyHint": true,
+      "destructiveHint": false
+    },
+    {
+      "name": "search_leads",
+      "file": "src/mcp/server.ts",
+      "startLine": 146,
+      "hasAnnotations": true,
+      "readOnlyHint": true,
+      "destructiveHint": false
+    },
+    {
+      "name": "score_lead",
+      "file": "src/mcp/server.ts",
+      "startLine": 178,
+      "hasAnnotations": true,
+      "readOnlyHint": true,
+      "destructiveHint": false
+    },
+    {
+      "name": "log_interaction",
+      "file": "src/mcp/server.ts",
+      "startLine": 196,
+      "hasAnnotations": true,
+      "readOnlyHint": false,
+      "destructiveHint": false
+    },
+    {
+      "name": "schedule_follow_up",
+      "file": "src/mcp/server.ts",
+      "startLine": 216,
+      "hasAnnotations": true,
+      "readOnlyHint": false,
+      "destructiveHint": false
+    },
+    {
+      "name": "set_follow_up_status",
+      "file": "src/mcp/server.ts",
+      "startLine": 236,
+      "hasAnnotations": true,
+      "readOnlyHint": false,
+      "destructiveHint": false
+    },
+    {
+      "name": "list_due_follow_ups",
+      "file": "src/mcp/server.ts",
+      "startLine": 259,
+      "hasAnnotations": true,
+      "readOnlyHint": true,
+      "destructiveHint": false
+    },
+    {
+      "name": "pipeline_summary",
+      "file": "src/mcp/server.ts",
+      "startLine": 279,
+      "hasAnnotations": true,
+      "readOnlyHint": true,
+      "destructiveHint": false
+    },
+    {
+      "name": "export_leads_csv",
+      "file": "src/mcp/server.ts",
+      "startLine": 300,
+      "hasAnnotations": true,
+      "readOnlyHint": true,
+      "destructiveHint": false
+    }
+  ],
+  "summary": {
+    "count": 0,
+    "bySeverity": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "info": 0
+    },
+    "byRule": {}
+  }
+}

@@ -1,0 +1,74 @@
+name: MCPSentry
+description: Audit MCP servers for over-broad tools, dishonest annotations, secrets, unsafe sinks, and dependency CVEs.
+author: Kevin Fairley / Provefirst
+inputs:
+  path:
+    description: Path to the MCP server project to scan
+    required: false
+    default: '.'
+  format:
+    description: Report format (markdown, json, sarif, or all)
+    required: false
+    default: all
+  fail-on:
+    description: Exit 1 when a finding at this severity or higher is present (none, low, medium, high, critical)
+    required: false
+    default: high
+  out:
+    description: Directory to write reports into
+    required: false
+    default: mcpsentry-report
+  probe-stdio:
+    description: Optional command that starts the MCP server on stdio for a tools/list probe
+    required: false
+    default: ''
+  no-osv:
+    description: Set to "true" to skip the OSV dependency lookup
+    required: false
+    default: 'false'
+outputs:
+  report-dir:
+    description: Directory that contains the written reports
+    value: ${{ steps.scan.outputs.report-dir }}
+  finding-count:
+    description: Number of findings
+    value: ${{ steps.scan.outputs.finding-count }}
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+    - name: Install MCPSentry
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm ci
+    - name: Build MCPSentry
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: npm run build
+    - name: Scan
+      id: scan
+      shell: bash
+      run: |
+        set -euo pipefail
+        OUT="${{ inputs.out }}"
+        mkdir -p "$OUT"
+        ARGS=(scan "${{ inputs.path }}" --format "${{ inputs.format }}" --out "$OUT" --fail-on "${{ inputs.fail-on }}")
+        if [ -n "${{ inputs.probe-stdio }}" ]; then
+          ARGS+=(--probe-stdio "${{ inputs.probe-stdio }}")
+        fi
+        if [ "${{ inputs.no-osv }}" = "true" ]; then
+          ARGS+=(--no-osv)
+        fi
+        set +e
+        node "${{ github.action_path }}/dist/cli.js" "${ARGS[@]}"
+        CODE=$?
+        set -e
+        COUNT=0
+        if [ -f "$OUT/mcpsentry-report.json" ]; then
+          COUNT=$(node -e "const r=require('./$OUT/mcpsentry-report.json'); process.stdout.write(String(r.summary.count))")
+        fi
+        echo "report-dir=$OUT" >> "$GITHUB_OUTPUT"
+        echo "finding-count=$COUNT" >> "$GITHUB_OUTPUT"
+        exit "$CODE"
