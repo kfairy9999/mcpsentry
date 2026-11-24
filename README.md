@@ -4,7 +4,7 @@
 
 MCPSentry is a CLI and a reusable GitHub Action that audits [Model Context Protocol](https://modelcontextprotocol.io) servers. It looks for the mistakes that turn an MCP tool into a confused deputy: dishonest annotations, unconstrained shell or path parameters, argument-to-sink injection, hardcoded secrets, prompt-injection-prone descriptions, missing HTTP authentication or rate limiting, and known npm vulnerabilities.
 
-Built by [Kevin Fairley](https://github.com/kfairy9999) at Provefirst. It is the scanner companion to [leadflow-mcp](https://github.com/kfairy9999/leadflow-mcp), which is itself an MCP server.
+Built by [Kevin Fairley](https://github.com/kfairley9999) at Provefirst. It is the scanner companion to [leadflow-mcp](https://github.com/kfairley9999/leadflow-mcp), which is itself an MCP server.
 
 ## Why this exists
 
@@ -44,7 +44,7 @@ This is a fixture score, not a claim about every MCP server. See [THREAT_MODEL.m
 Node.js 22.13 or newer. This package is **not published to npm**; run it from a clone.
 
 ```bash
-git clone https://github.com/kfairy9999/mcpsentry.git
+git clone https://github.com/kfairley9999/mcpsentry.git
 cd mcpsentry
 npm install
 npm run build
@@ -75,7 +75,7 @@ node dist/cli.js evaluate --fixtures fixtures --truth fixtures/corpus.json
 The action is shipped in this repository. It is **not listed on the GitHub Marketplace**. Pin a tag in your own workflow:
 
 ```yaml
-- uses: kfairy9999/mcpsentry@v0.1.0
+- uses: kfairley9999/mcpsentry@v0.1.0
   with:
     path: .
     format: all
@@ -87,7 +87,7 @@ Upload `mcpsentry-report/mcpsentry-report.sarif` with `github/codeql-action/uplo
 
 ## leadflow-mcp results
 
-MCPSentry was run against [`kfairy9999/leadflow-mcp`](https://github.com/kfairy9999/leadflow-mcp) at [`73dda9c`](https://github.com/kfairy9999/leadflow-mcp/commit/73dda9c5d41d9fd360cee28be8147b9c7fd25b39).
+MCPSentry was run against [`kfairley9999/leadflow-mcp`](https://github.com/kfairley9999/leadflow-mcp) at [`73dda9c`](https://github.com/kfairley9999/leadflow-mcp/commit/73dda9c5d41d9fd360cee28be8147b9c7fd25b39).
 
 - **11 tools** found, all annotated (`readOnlyHint` / `destructiveHint` present and consistent with the handlers)
 - **0 findings** (HTTP auth and rate limiting were detected; no production lockfile CVEs; test-only token doubles are ignored by MCP001)

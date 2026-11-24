@@ -51,7 +51,7 @@ export function toSarif(result: ScanResult): string {
       driver: {
         name: TOOL_NAME,
         version: result.version,
-        informationUri: 'https://github.com/kfairy9999/mcpsentry',
+        informationUri: 'https://github.com/kfairley9999/mcpsentry',
         rules,
       },
     },

@@ -6,13 +6,13 @@
   "type": "module",
   "license": "MIT",
   "author": "Kevin Fairley",
-  "homepage": "https://github.com/kfairy9999/mcpsentry",
+  "homepage": "https://github.com/kfairley9999/mcpsentry",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kfairy9999/mcpsentry.git"
+    "url": "git+https://github.com/kfairley9999/mcpsentry.git"
   },
   "bugs": {
-    "url": "https://github.com/kfairy9999/mcpsentry/issues"
+    "url": "https://github.com/kfairley9999/mcpsentry/issues"
   },
   "keywords": [
     "mcp",

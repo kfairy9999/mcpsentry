@@ -1,6 +1,6 @@
 # MCPSentry report
 
-- **Scanned:** kfairy9999/leadflow-mcp@73dda9c5d41d9fd360cee28be8147b9c7fd25b39
+- **Scanned:** kfairley9999/leadflow-mcp@73dda9c5d41d9fd360cee28be8147b9c7fd25b39
 - **When:** 2026-11-22T06:18:32.782Z
 - **Scanner:** MCPSentry 0.1.0
 - **Tools found:** 11
